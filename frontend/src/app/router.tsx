@@ -4,6 +4,9 @@ import { RootLayout } from '@/pages/layouts/RootLayout';
 import { LoadingSpinner } from '@/core/components/LoadingSpinner';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const StockMovementsPage = lazy(() => import('@/pages/StockMovements'));
+const NewStockMovementPage = lazy(() => import('@/pages/NewStockMovement'));
+const CurrentStockPage = lazy(() => import('@/pages/CurrentStock'));
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +32,30 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <HomePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'stock-movements',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <StockMovementsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'stock-movements/new',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <NewStockMovementPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'current-stock',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <CurrentStockPage />
           </Suspense>
         ),
       },

@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 export const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-4">
       <div className="text-center max-w-2xl">
@@ -7,11 +11,17 @@ export const HomePage = () => {
           Sistema para controlar itens no estoque: entradas, saídas e quantidade atual
         </p>
         <div className="flex gap-4 justify-center">
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-            Começar
+          <button
+            onClick={() => navigate('/stock-movements')}
+            className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+          >
+            Movimentações
           </button>
-          <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">
-            Saiba Mais
+          <button
+            onClick={() => navigate('/current-stock')}
+            className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors"
+          >
+            Estoque Atual
           </button>
         </div>
       </div>
